@@ -154,7 +154,3 @@ Client Request → Next.js Edge → API Routes → Database
 3. 변경사항을 Commit 합니다 (`git commit -m 'Add some amazing feature'`)
 4. Branch에 Push 합니다 (`git push origin feature/amazing-feature`)
 5. Pull Request를 생성합니다
-
-## 📝 라이선스
-
-이 프로젝트는 MIT 라이선스를 따릅니다.
