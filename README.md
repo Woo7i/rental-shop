@@ -68,20 +68,37 @@
 ```
 src/
 ├── app/                    # Next.js App Router
-│   ├── api/               # API Routes
-│   ├── (auth)/            # 인증 관련 페이지
-│   ├── (main)/            # 메인 페이지
-│   └── (shop)/            # 렌탈샵 관련 페이지
-├── components/            # React 컴포넌트
-│   ├── common/           # 공통 컴포넌트
+│   ├── (auth)/            # 인증 관련 라우트 그룹
+│   │   ├── login/         # 로그인 페이지
+│   │   ├── signup/        # 회원가입 페이지
+│   │   └── layout.tsx     # 인증 레이아웃
+│   ├── (main)/            # 메인 기능 라우트 그룹
+│   │   ├── search/        # 검색 페이지
+│   │   ├── compare/       # 비교 페이지
+│   │   ├── favorites/     # 즐겨찾기 페이지
+│   │   └── layout.tsx     # 메인 레이아웃
+│   ├── api/               # API 라우트
+│   │   ├── auth/         # 인증 관련 API
+│   │   ├── equipment/    # 장비 관련 API
+│   │   ├── shops/        # 렌탈샵 관련 API
+│   │   └── search/       # 검색 관련 API
+│   └── layout.tsx         # 루트 레이아웃
+├── components/            # 재사용 가능한 컴포넌트
+│   ├── auth/             # 인증 관련 컴포넌트
+│   ├── common/           # 공통 UI 컴포넌트
 │   ├── layout/           # 레이아웃 컴포넌트
-│   └── shop/            # 렌탈샵 관련 컴포넌트
-├── lib/                  # 유틸리티 함수
-│   ├── api/             # API 관련 함수
-│   ├── hooks/           # Custom Hooks
-│   └── utils/           # 헬퍼 함수
+│   ├── search/           # 검색 관련 컴포넌트
+│   ├── compare/          # 비교 관련 컴포넌트
+│   ├── favorites/        # 즐겨찾기 관련 컴포넌트
+│   └── modals/           # 모달 컴포넌트
+├── lib/                  # 유틸리티 및 비즈니스 로직
+│   ├── api/             # API 통신 관련 함수
+│   ├── hooks/           # 커스텀 훅
+│   ├── store/           # Zustand 스토어
+│   └── utils/           # 유틸리티 함수
 ├── types/               # TypeScript 타입 정의
-└── styles/              # 글로벌 스타일
+├── styles/              # 전역 스타일
+└── config/             # 설정 파일
 ```
 
 ### 데이터 흐름
