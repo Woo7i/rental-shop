@@ -57,11 +57,11 @@
 
 #### 사용자 인증 및 검색 프로세스
 
-![System Flowchart](docs/images/system-flowchart.png)
+![System Flowchart](docs/diagrams/system-flowchart.png)
 
 ### 데이터베이스 스키마
 
-![Database Schema](docs/images/db-schema.png)
+![Database Schema](docs/diagrams/db-schema.png)
 
 ### 폴더 구조
 
