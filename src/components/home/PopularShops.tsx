@@ -54,7 +54,7 @@ export default function PopularShops() {
           </Link>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
-          {SHOPS.map((shop) => (
+          {SHOPS.map((shop, index) => (
             <Link
               key={shop.id}
               href={shop.href}
@@ -65,7 +65,8 @@ export default function PopularShops() {
                   src={shop.image}
                   alt={shop.name}
                   fill
-                  className="object-cover transition-transform group-hover:scale-105"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  priority={index < 2}
                 />
               </div>
               <h3 className="mb-2 text-lg font-bold text-[#333333]">
