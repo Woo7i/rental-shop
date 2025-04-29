@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { Moon } from 'lucide-react';
 
 const NAV_ITEMS = [
-  { href: '/', label: '홈' },
   { href: '/shops', label: '렌탈샵 목록' },
   { href: '/categories', label: '장비 카테고리' },
   { href: '/compare', label: '비교하기' },
@@ -14,15 +13,15 @@ export default function Header() {
     <header className="fixed left-0 right-0 top-0 z-50 border-b bg-white">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="text-xl font-bold text-[#333333]">
-          로고
+          렌탈샵
         </Link>
 
-        <nav className="flex items-center justify-center">
+        <nav className="flex flex-1 items-center justify-center gap-12 pr-8">
           {NAV_ITEMS.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
-              className="px-8 text-[#333333] transition-colors hover:text-gray-600"
+              className="text-[#333333] transition-colors hover:text-gray-600"
             >
               {label}
             </Link>
