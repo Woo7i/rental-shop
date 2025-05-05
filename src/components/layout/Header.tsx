@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Moon } from 'lucide-react';
 
 const NAV_ITEMS = [
-  { href: '/shops', label: '렌탈샵 목록' },
+  { href: '/shop', label: '렌탈샵 목록' },
   { href: '/categories', label: '장비 카테고리' },
   { href: '/compare', label: '비교하기' },
   { href: '/reviews', label: '리뷰' },

@@ -47,7 +47,7 @@ export default function PopularShops() {
         <div className="mb-8 flex items-center justify-between">
           <h2 className="text-2xl font-bold text-[#333333]">인기 렌탈샵</h2>
           <Link
-            href="/shops"
+            href="/shop"
             className="text-sm text-[#4C6EF5] transition-colors hover:text-[#4263eb]"
           >
             더 보기 →
