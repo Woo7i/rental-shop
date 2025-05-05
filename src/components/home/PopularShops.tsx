@@ -47,14 +47,14 @@ export default function PopularShops() {
         <div className="mb-8 flex items-center justify-between">
           <h2 className="text-2xl font-bold text-[#333333]">인기 렌탈샵</h2>
           <Link
-            href="/shops"
+            href="/shop"
             className="text-sm text-[#4C6EF5] transition-colors hover:text-[#4263eb]"
           >
             더 보기 →
           </Link>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
-          {SHOPS.map((shop) => (
+          {SHOPS.map((shop, index) => (
             <Link
               key={shop.id}
               href={shop.href}
@@ -65,7 +65,8 @@ export default function PopularShops() {
                   src={shop.image}
                   alt={shop.name}
                   fill
-                  className="object-cover transition-transform group-hover:scale-105"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  priority={index < 2}
                 />
               </div>
               <h3 className="mb-2 text-lg font-bold text-[#333333]">
