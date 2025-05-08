@@ -39,7 +39,7 @@ const EQUIPMENTS = [
 export default function RecentEquipments() {
   return (
     <section className="relative bg-[#F8F9FA] py-20">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto max-w-7xl px-4">
         <div className="mb-8 flex items-center justify-between">
           <h2 className="text-2xl font-bold text-[#333333]">
             최근 추가된 장비
