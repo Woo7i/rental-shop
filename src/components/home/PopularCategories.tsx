@@ -111,7 +111,7 @@ CategoryCard.displayName = 'CategoryCard';
 export default function PopularCategories() {
   return (
     <section className="bg-white py-20">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto max-w-7xl px-4">
         <header className="mb-8 flex items-center justify-between">
           <h2 className="text-2xl font-bold text-gray-900">인기 카테고리</h2>
           <Link
