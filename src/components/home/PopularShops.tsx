@@ -1,44 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-
-const SHOPS = [
-  {
-    id: 'shop-a',
-    name: '렌탈샵 A',
-    image: '/images/shop-placeholder.jpg',
-    rating: 4.8,
-    reviews: 120,
-    location: '서울 강남구',
-    href: '/shops/shop-a',
-  },
-  {
-    id: 'shop-b',
-    name: '렌탈샵 B',
-    image: '/images/shop-placeholder.jpg',
-    rating: 4.7,
-    reviews: 98,
-    location: '서울 마포구',
-    href: '/shops/shop-b',
-  },
-  {
-    id: 'shop-c',
-    name: '렌탈샵 C',
-    image: '/images/shop-placeholder.jpg',
-    rating: 4.6,
-    reviews: 86,
-    location: '서울 용산구',
-    href: '/shops/shop-c',
-  },
-  {
-    id: 'shop-d',
-    name: '렌탈샵 D',
-    image: '/images/shop-placeholder.jpg',
-    rating: 4.5,
-    reviews: 75,
-    location: '경기 부천시',
-    href: '/shops/shop-d',
-  },
-] as const;
+import { POPULAR_SHOP_ITEMS } from '@/constants/components/home/popularShopsEnum';
 
 export default function PopularShops() {
   return (
@@ -54,7 +16,7 @@ export default function PopularShops() {
           </Link>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
-          {SHOPS.map((shop, index) => (
+          {POPULAR_SHOP_ITEMS.map((shop, index) => (
             <Link
               key={shop.id}
               href={shop.href}

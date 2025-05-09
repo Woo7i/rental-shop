@@ -1,33 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
-
-const COMPARISONS = [
-  {
-    id: 'sony-a7s3',
-    name: 'Sony A7S III',
-    image: '/images/equipment-placeholder.jpg',
-    shops: [
-      { name: '프로렌탈', price: 55000 },
-      { name: '카메라빌리지', price: 50000 },
-      { name: '디지털프라자', price: 60000 },
-    ],
-    href: '/equipments/sony-a7s3',
-  },
-  {
-    id: 'canon-r5',
-    name: 'Canon EOS R5',
-    image: '/images/equipment-placeholder.jpg',
-    shops: [
-      { name: '프로렌탈', price: 65000 },
-      { name: '카메라빌리지', price: 60000 },
-      { name: '디지털프라자', price: 70000 },
-    ],
-    href: '/equipments/canon-r5',
-  },
-] as const;
+import {
+  PRICE_COMPARISON_ITEMS,
+  PriceComparisonItem,
+} from '@/constants/components/home/priceComparisonEnum';
 
 interface ComparisonCardProps {
-  comparison: (typeof COMPARISONS)[number];
+  comparison: PriceComparisonItem;
 }
 
 function ComparisonCard({ comparison }: ComparisonCardProps) {
@@ -102,7 +81,7 @@ export default function PriceComparison() {
           </Link>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
-          {COMPARISONS.map((comparison) => (
+          {PRICE_COMPARISON_ITEMS.map((comparison) => (
             <ComparisonCard key={comparison.id} comparison={comparison} />
           ))}
         </div>

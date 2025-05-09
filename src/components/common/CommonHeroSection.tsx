@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Search } from 'lucide-react';
 import React from 'react';
 
@@ -17,13 +16,7 @@ export default function CommonHeroSection({
     <div className={`relative w-full py-10 ${className}`}>
       <div className="pointer-events-none absolute inset-0 select-none">
         <div className="relative h-full w-full">
-          <Image
-            src="/images/hero-bg.svg"
-            alt="Background pattern"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/50 to-transparent" />
+          <div className="absolute inset-0 bg-white" />
         </div>
       </div>
       <div className="relative z-10 mx-auto flex w-full max-w-screen-xl items-center justify-between px-4">

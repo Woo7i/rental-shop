@@ -1,18 +1,15 @@
 'use client';
 
 import { useState } from 'react';
+import {
+  SHOP_LOCATIONS,
+  SHOP_CATEGORIES,
+  ShopSortType,
+  ShopSortOrder,
+} from '@/constants/components/shop/shopEnum';
 
-const locations = ['전체 지역', '서울', '경기', '부산', '대구', '광주'];
-const categories = [
-  '모든 장비',
-  '카메라',
-  '렌즈',
-  '조명',
-  '삼각대',
-  '드론',
-  '마이크',
-  '특수장비',
-];
+const locations = SHOP_LOCATIONS;
+const categories = SHOP_CATEGORIES;
 
 export default function ShopFilterBar() {
   const [selectedLocation, setSelectedLocation] = useState('전체 지역');
@@ -20,12 +17,12 @@ export default function ShopFilterBar() {
   const [parkingOnly, setParkingOnly] = useState(false);
   // 정렬 상태: type(평점/리뷰), order(desc/asc)
   const [sort, setSort] = useState<{
-    type: '평점순' | '리뷰순';
-    order: 'desc' | 'asc';
+    type: ShopSortType;
+    order: ShopSortOrder;
   }>({ type: '평점순', order: 'desc' });
 
   // 정렬 토글 핸들러
-  const handleSortToggle = (type: '평점순' | '리뷰순') => {
+  const handleSortToggle = (type: ShopSortType) => {
     setSort((prev) => {
       if (prev.type === type) {
         // 같은 타입이면 order만 토글

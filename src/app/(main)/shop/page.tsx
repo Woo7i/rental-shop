@@ -1,7 +1,7 @@
 import CommonHeroSection from '@/components/common/CommonHeroSection';
 import ShopFilterBar from '@/components/shop/ShopFilterBar';
 import ShopList from '@/components/shop/ShopList';
-import Pagination from '@/components/shop/Pagination';
+import Pagination from '@/components/common/Pagination';
 
 export default function ShopPage() {
   return (
