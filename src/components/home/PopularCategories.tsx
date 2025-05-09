@@ -1,6 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { memo } from 'react';
+import {
+  HOME_CATEGORY_IDS,
+  HOME_CATEGORY_NAME_MAP,
+  HOME_CATEGORY_IMAGE_MAP,
+  HOME_CATEGORY_HREF_MAP,
+  HomeCategoryId,
+} from '@/constants/components/home/categoryEnum';
 
 // 상수를 별도로 분리하여 가독성과 유지보수성 향상
 const GRID_LAYOUTS = {
@@ -18,57 +25,20 @@ const IMAGE_SIZES = {
 
 // 카테고리 데이터 타입 정의로 예측 가능성 향상
 interface Category {
-  id: string;
+  id: HomeCategoryId;
   name: string;
   image: string;
   count: number;
   href: string;
 }
 
-const CATEGORIES: Category[] = [
-  {
-    id: 'camera',
-    name: '카메라',
-    image: '/images/categories/camera.jpg',
-    count: 128,
-    href: '/categories/camera',
-  },
-  {
-    id: 'lens',
-    name: '렌즈',
-    image: '/images/categories/lens.jpg',
-    count: 256,
-    href: '/categories/lens',
-  },
-  {
-    id: 'lighting',
-    name: '조명',
-    image: '/images/categories/lighting.jpg',
-    count: 64,
-    href: '/categories/lighting',
-  },
-  {
-    id: 'audio',
-    name: '음향장비',
-    image: '/images/categories/audio.jpg',
-    count: 96,
-    href: '/categories/audio',
-  },
-  {
-    id: 'stabilizer',
-    name: '스태빌라이저',
-    image: '/images/categories/stabilizer.jpg',
-    count: 32,
-    href: '/categories/stabilizer',
-  },
-  {
-    id: 'drone',
-    name: '드론',
-    image: '/images/categories/drone.jpg',
-    count: 24,
-    href: '/categories/drone',
-  },
-];
+const CATEGORIES: Category[] = HOME_CATEGORY_IDS.map((id) => ({
+  id,
+  name: HOME_CATEGORY_NAME_MAP[id],
+  image: HOME_CATEGORY_IMAGE_MAP[id],
+  count: 0, // 기존 count 값은 필요시 별도 상수화 가능
+  href: HOME_CATEGORY_HREF_MAP[id],
+}));
 
 interface CategoryCardProps {
   category: Category;
@@ -110,12 +80,12 @@ CategoryCard.displayName = 'CategoryCard';
 // 메인 컴포넌트의 책임을 명확히 분리
 export default function PopularCategories() {
   return (
-    <section className="bg-white py-20">
+    <section className="bg-[#F8F9FA] py-20">
       <div className="container mx-auto max-w-7xl px-4">
         <header className="mb-8 flex items-center justify-between">
           <h2 className="text-2xl font-bold text-gray-900">인기 카테고리</h2>
           <Link
-            href="/categories"
+            href="/item"
             className="text-sm text-blue-600 transition-colors hover:text-blue-700"
           >
             전체 카테고리 →
