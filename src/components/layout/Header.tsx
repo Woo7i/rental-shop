@@ -1,6 +1,5 @@
 'use client';
 import Link from 'next/link';
-import { Moon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 const NAV_ITEMS = [
@@ -11,7 +10,6 @@ const NAV_ITEMS = [
 ] as const;
 
 const AUTH_LOGIN_PATH = '/login';
-const AUTH_SIGNUP_PATH = '/signup';
 
 export default function Header() {
   const router = useRouter();
@@ -41,15 +39,6 @@ export default function Header() {
             onClick={() => router.push(AUTH_LOGIN_PATH)}
           >
             로그인
-          </button>
-          <button
-            className="rounded-md bg-[#4C6EF5] px-4 py-2 text-white transition-colors hover:bg-[#4263eb]"
-            onClick={() => router.push(AUTH_SIGNUP_PATH)}
-          >
-            회원가입
-          </button>
-          <button className="flex items-center gap-1 rounded-md px-3 py-2 text-[#333333] transition-colors hover:bg-gray-100">
-            <Moon size={18} />
           </button>
         </div>
       </div>
