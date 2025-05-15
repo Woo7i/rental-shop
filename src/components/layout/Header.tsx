@@ -1,5 +1,7 @@
+'use client';
 import Link from 'next/link';
 import { Moon } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const NAV_ITEMS = [
   { href: '/shop', label: '렌탈샵 목록' },
@@ -8,7 +10,12 @@ const NAV_ITEMS = [
   { href: '/reviews', label: '리뷰' },
 ] as const;
 
+const AUTH_LOGIN_PATH = '/login';
+const AUTH_SIGNUP_PATH = '/signup';
+
 export default function Header() {
+  const router = useRouter();
+
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b bg-white">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
@@ -29,10 +36,16 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <button className="rounded-md bg-[#4C6EF5] px-4 py-2 text-white transition-colors hover:bg-[#4263eb]">
+          <button
+            className="rounded-md bg-[#4C6EF5] px-4 py-2 text-white transition-colors hover:bg-[#4263eb]"
+            onClick={() => router.push(AUTH_LOGIN_PATH)}
+          >
             로그인
           </button>
-          <button className="rounded-md bg-[#4C6EF5] px-4 py-2 text-white transition-colors hover:bg-[#4263eb]">
+          <button
+            className="rounded-md bg-[#4C6EF5] px-4 py-2 text-white transition-colors hover:bg-[#4263eb]"
+            onClick={() => router.push(AUTH_SIGNUP_PATH)}
+          >
             회원가입
           </button>
           <button className="flex items-center gap-1 rounded-md px-3 py-2 text-[#333333] transition-colors hover:bg-gray-100">
